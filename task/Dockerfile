@@ -1,10 +1,14 @@
-# Use a base image with necessary dependencies
+# Download Ubuntu
 FROM ubuntu:20.04
 
-# Set environment variables
+# Give label for your docker file 
+LABEL   description="shared tools image" \
+        maintainer="ali abdul-qadir"
+
+# Set env vars
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install required tools
+# Update/install telnet & elinks
 RUN apt-get update && \
     apt-get install -y wget unzip curl telnet elinks && \
     rm -rf /var/lib/apt/lists/*
