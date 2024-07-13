@@ -8,7 +8,7 @@ FROM    ubuntu:20.04
 
 # Give label for your docker file 
 LABEL   description="This is my first image" \
-        maintainer="farrukh sadykov"
+        maintainer="ali abdul-qadir"
 
 # install telnet     
 RUN     DEBIAN_FRONTEND=noninteractive  apt-get update -y           &&  \   
@@ -21,9 +21,6 @@ RUN     DEBIAN_FRONTEND=noninteractive  apt-get update -y           &&  \
 
 # Open port 80 on container
 EXPOSE 80
-
-# Copy file content
-COPY index.html /var/www/html
 
 # Run command 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
