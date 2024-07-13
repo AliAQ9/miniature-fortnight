@@ -15,9 +15,12 @@ RUN     DEBIAN_FRONTEND=noninteractive  apt-get update -y           &&  \
         DEBIAN_FRONTEND=noninteractive  apt-get install telnet -y   &&  \
         DEBIAN_FRONTEND=noninteractive  apt-get install  apache2 -y  && \ 
         apt-get clean
-        
+
 # Open port 80 on container
 EXPOSE 80
+
+# Copy file content
+COPY index.html /var/www/html
 
 # Run command 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
