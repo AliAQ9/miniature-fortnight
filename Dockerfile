@@ -1,3 +1,3 @@
 #https://docs.docker.com/reference/dockerfile/
 FROM centos:7
-RUN yum install telnet -y 
+RUN sudo yum install telnet -y 
